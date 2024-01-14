@@ -17,7 +17,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-"""отслеживаем новый url адрес"""
+
+"""{ % csrf_token %} параметр, для верной работы формы"""
+"""создание главного страницы, отслеживаем новый url адрес, при переходе на новую страницу, """
+""" admin - доступ к бд. Обращение к программе weather и у нее берем файл urls"""
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('weather.urls')),
